@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ontrmhsis.github.io/study/</id>
     <title>Java开发学习</title>
-    <updated>2020-02-28T09:22:09.161Z</updated>
+    <updated>2020-02-28T09:25:11.640Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ontrmhsis.github.io/study/"/>
     <link rel="self" href="https://ontrmhsis.github.io/study/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<h1 id="leetcode">leetcode</h1>
 <h1 id="树">树</h1>
 <h2 id="101对称二叉树">#101对称二叉树</h2>
-<pre><code>给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 `[1,2,2,3,4,4,3]` 是对称的。
+<pre><code>给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 [1,2,2,3,4,4,3]是对称的。
     1
    / \
   2   2
@@ -38,7 +38,7 @@
 	 }
 </code></pre>
 <Br>
-<h3 id="617合并二叉树">#617合并二叉树</h3>
+<h2 id="617合并二叉树">#617合并二叉树</h2>
 <pre><code>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
 
 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为NULL 的节点将直接作为新二叉树的节点。
