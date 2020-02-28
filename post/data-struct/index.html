@@ -1,0 +1,232 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>数据结构 | Java开发学习</title>
+<link rel="shortcut icon" href="https://ontrmhsis.github.io/study//favicon.ico?v=1582881725932">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ontrmhsis.github.io/study//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="数据结构 | Java开发学习 - Atom Feed" href="https://ontrmhsis.github.io/study//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="leetcode
+树
+#101对称二叉树
+给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 `[1,2,2,3,4,4,3]` 是对称的。
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+
+    pub..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://ontrmhsis.github.io/study/">
+  <img class="avatar" src="https://ontrmhsis.github.io/study//images/avatar.png?v=1582881725932" alt="">
+  </a>
+  <h1 class="site-title">
+    Java开发学习
+  </h1>
+  <p class="site-description">
+    学习资料整理
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/study/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              数据结构
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-28
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="leetcode">leetcode</h1>
+<h1 id="树">树</h1>
+<h2 id="101对称二叉树">#101对称二叉树</h2>
+<pre><code>给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 `[1,2,2,3,4,4,3]` 是对称的。
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre>
+<pre><code class="language-java">    public boolean isSymmetric(TreeNode root) {
+	      if(root == null) return true;
+	      return isSymmertric(root.left, root.right);
+	 }
+	 private boolean isSymmertric(TreeNode t1,TreeNode t2) {
+		 if(t1 == null &amp;&amp; t2 == null) return true;
+		 if(t1 == null || t2 == null) return false;
+		 if(t1.val != t2.val) return false;
+		 return isSymmertric(t1.left, t2.right) &amp;&amp; isSymmertric(t1.right, t2.left);
+	 }
+</code></pre>
+<Br>
+<h3 id="617合并二叉树">#617合并二叉树</h3>
+<pre><code>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
+
+你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为NULL 的节点将直接作为新二叉树的节点。
+*示例1*
+输入: 
+	Tree 1                     Tree 2                  
+          1                         2                             
+         / \                       / \                            
+        3   2                     1   3                        
+       /                           \   \                      
+      5                             4   7                  
+输出: 
+合并后的树:
+	     3
+	    / \
+	   4   5
+	  / \   \ 
+	 5   4   7
+</code></pre>
+<pre><code class="language-java">       public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+           if(t1 != null &amp;&amp; t2 != null){
+               TreeNode t3 = new TreeNode(t1.val+t2.val);
+               t3.left = mergeTrees(t1.left,t2.left);
+               t3.right = mergeTrees(t1.right,t2.right);
+               return  t3;
+           }else{
+               return t1==null ? t2:t1;
+           }
+    }
+</code></pre>
+<Br>
+ ###  二叉树旋转
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#leetcode">leetcode</a></li>
+<li><a href="#%E6%A0%91">树</a>
+<ul>
+<li><a href="#101%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91">#101对称二叉树</a>
+<ul>
+<li><a href="#617%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91">#617合并二叉树</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Created by  <a href="https://github.com/Ontrmhsis" target="_blank"> Ontrmhsis</a>
+  <a class="rss" href="https://ontrmhsis.github.io/study//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
