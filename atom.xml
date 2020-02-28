@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ontrmhsis.github.io/study/</id>
     <title>Java开发学习</title>
-    <updated>2020-02-28T07:32:59.942Z</updated>
+    <updated>2020-02-28T08:03:20.764Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ontrmhsis.github.io/study/"/>
     <link rel="self" href="https://ontrmhsis.github.io/study/atom.xml"/>
@@ -16,7 +16,40 @@
         <link href="https://ontrmhsis.github.io/study/post/shu-ju-jie-gou/">
         </link>
         <updated>2020-02-28T07:32:38.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="测试">测试</h3>
+        <content type="html"><![CDATA[<h2 id="leetcode">leetcode</h2>
+<h3 id="101对称二叉树">#101对称二叉树</h3>
+<p>给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 <code>[1,2,2,3,4,4,3]</code> 是对称的。</p>
+<pre><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre>
+<p>样例代码</p>
+<pre><code>    public boolean isSymmetric(TreeNode root) {
+	      if(root == null) return true;
+	      return isSymmertric(root.left, root.right);
+	 }
+	 private boolean isSymmertric(TreeNode t1,TreeNode t2) {
+		 if(t1 == null &amp;&amp; t2 == null) return true;
+		 if(t1 == null || t2 == null) return false;
+		 if(t1.val != t2.val) return false;
+		 return isSymmertric(t1.left, t2.right) &amp;&amp; isSymmertric(t1.right, t2.left);
+	 }
+</code></pre>
+<h3 id="617合并二叉树">#617合并二叉树</h3>
+<pre><code>       public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+           if(t1 != null &amp;&amp; t2 != null){
+               TreeNode t3 = new TreeNode(t1.val+t2.val);
+               t3.left = mergeTrees(t1.left,t2.left);
+               t3.right = mergeTrees(t1.right,t2.right);
+               return  t3;
+           }else{
+               return t1==null ? t2:t1;
+           }
+    }
+</code></pre>
+<h3 id="二叉树旋转">二叉树旋转</h3>
 ]]></content>
     </entry>
 </feed>

@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>数据结构 | Java开发学习</title>
-<link rel="shortcut icon" href="https://ontrmhsis.github.io/study//favicon.ico?v=1582875174919">
+<link rel="shortcut icon" href="https://ontrmhsis.github.io/study//favicon.ico?v=1582876945543">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ontrmhsis.github.io/study//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="数据结构 | Java开发学习 - Atom Feed" href="https://ontrmhsis.github.io/study//atom.xml">
@@ -11,8 +11,17 @@
 
 
 
-    <meta name="description" content="测试
-" />
+    <meta name="description" content="leetcode
+#101对称二叉树
+给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+
+样例代码
+    pu..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +31,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ontrmhsis.github.io/study/">
-  <img class="avatar" src="https://ontrmhsis.github.io/study//images/avatar.png?v=1582875174919" alt="">
+  <img class="avatar" src="https://ontrmhsis.github.io/study//images/avatar.png?v=1582876945543" alt="">
   </a>
   <h1 class="site-title">
     Java开发学习
@@ -89,16 +98,51 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h3 id="测试">测试</h3>
+                <h2 id="leetcode">leetcode</h2>
+<h3 id="101对称二叉树">#101对称二叉树</h3>
+<p>给定一个二叉树，检查它是否是镜像对称的。例如，二叉树 <code>[1,2,2,3,4,4,3]</code> 是对称的。</p>
+<pre><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre>
+<p>样例代码</p>
+<pre><code>    public boolean isSymmetric(TreeNode root) {
+	      if(root == null) return true;
+	      return isSymmertric(root.left, root.right);
+	 }
+	 private boolean isSymmertric(TreeNode t1,TreeNode t2) {
+		 if(t1 == null &amp;&amp; t2 == null) return true;
+		 if(t1 == null || t2 == null) return false;
+		 if(t1.val != t2.val) return false;
+		 return isSymmertric(t1.left, t2.right) &amp;&amp; isSymmertric(t1.right, t2.left);
+	 }
+</code></pre>
+<h3 id="617合并二叉树">#617合并二叉树</h3>
+<pre><code>       public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+           if(t1 != null &amp;&amp; t2 != null){
+               TreeNode t3 = new TreeNode(t1.val+t2.val);
+               t3.left = mergeTrees(t1.left,t2.left);
+               t3.right = mergeTrees(t1.right,t2.right);
+               return  t3;
+           }else{
+               return t1==null ? t2:t1;
+           }
+    }
+</code></pre>
+<h3 id="二叉树旋转">二叉树旋转</h3>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li>
+<li><a href="#leetcode">leetcode</a>
 <ul>
-<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
+<li><a href="#101%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91">#101对称二叉树</a></li>
+<li><a href="#617%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91">#617合并二叉树</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%97%8B%E8%BD%AC">二叉树旋转</a></li>
 </ul>
 </li>
 </ul>
